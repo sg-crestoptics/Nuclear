@@ -11,6 +11,11 @@ workspace "Nuclear"
 
     outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+    IncludeDir = {}
+    IncludeDir["GLFW"] = "Nuclear/Vendor/GLFW/include"
+
+    include "Nuclear/vendor/GLFW"
+
 project "Nuclear"
     location "Nuclear"
     kind "SharedLib"
@@ -18,6 +23,9 @@ project "Nuclear"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    pchheader "ncpch.h"
+    pchsource "Nuclear/src/ncpch.cpp"
 
     files
     {
@@ -28,7 +36,13 @@ project "Nuclear"
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links{
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"

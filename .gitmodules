@@ -1,3 +1,6 @@
 [submodule "Nuclear/vendor/spdlog"]
 	path = Nuclear/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Nuclear/vendor/GLFW"]
+	path = Nuclear/vendor/GLFW
+	url = https://github.com/TheCherno/glfw.git

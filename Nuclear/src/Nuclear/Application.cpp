@@ -1,13 +1,16 @@
+#include "ncpch.h"
 #include "Application.h"
 
 #include "Nuclear/Events/ApplicationEvent.h"
-#include "Nuclear/Events/MouseEvent.h"
 #include "Nuclear/Log.h"
+
+#include <GLFW/glfw3.h>
 
 namespace Nuclear
 {
 	Application::Application()
 	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -15,9 +18,12 @@ namespace Nuclear
 	}
 	void Application::Run()
 	{
-		MouseMovedEvent e(120, 12);
-		NC_TRACE(e);
 
-		while (true);
+		while (m_Running)
+		{
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
+		};
 	}
 }

@@ -34,6 +34,9 @@
     <ClInclude Include="src\Nuclear\Log.h">
       <Filter>Nuclear</Filter>
     </ClInclude>
+    <ClInclude Include="src\ncpch.h" />
+    <ClInclude Include="src\Nuclear\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nuclear\Application.cpp">
@@ -42,5 +45,7 @@
     <ClCompile Include="src\Nuclear\Log.cpp">
       <Filter>Nuclear</Filter>
     </ClCompile>
+    <ClCompile Include="src\ncpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

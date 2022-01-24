@@ -1,11 +1,10 @@
 #pragma once
-
+#include "ncpch.h"
 #include "Nuclear/Core.h"
 
-//questi include dovrebbero essere in un precompiled header dato che sono standard
-#include <string>
-#include <functional>
 
+//questi include dovrebbero essere in un precompiled header dato che sono standard
+ 
 namespace Nuclear
 {
 	// Events in Nuclear are currently blocking, meaning when an event occurs it
